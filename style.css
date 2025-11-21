@@ -167,8 +167,8 @@ a {
 
 .project-card img {
     width: 100%;
-    height: auto; /* IMPORTANTE: La altura se calcula automáticamente (proporcional al 100% del ancho) */
-    object-fit: contain; /* OPTIMIZACIÓN: Asegura que la imagen se vea completa, sin forzar un relleno */
+    height: auto; /* <-- ¡MUY IMPORTANTE! La altura se ajustará automáticamente a la proporción de cada imagen. */
+    object-fit: contain; /* <-- Esto asegura que la imagen entera sea visible, sin recortes. */
     border-bottom: 1px solid var(--border-color);
     transition: border-color 0.3s;
 }
