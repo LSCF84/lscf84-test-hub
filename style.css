@@ -1,3 +1,31 @@
+/* ======================================= */
+/* 1. KEYFRAMES: Animación de Barrido Neón */
+/* ======================================= */
+/* Define la variable que cambiará de color */
+@keyframes neon-sweep {
+    0% { 
+        --animated-color: #00FFFF; /* Cian */
+        --animated-shadow-value: 0 0 20px rgba(0, 255, 255, 0.5); 
+    }
+    25% { 
+        --animated-color: #00FF00; /* Verde */
+        --animated-shadow-value: 0 0 20px rgba(0, 255, 0, 0.5); 
+    }
+    50% { 
+        --animated-color: #FFFF00; /* Amarillo */
+        --animated-shadow-value: 0 0 20px rgba(255, 255, 0, 0.5); 
+    }
+    75% { 
+        --animated-color: #FF00FF; /* Magenta */
+        --animated-shadow-value: 0 0 20px rgba(255, 0, 255, 0.5); 
+    }
+    100% { 
+        --animated-color: #00FFFF; /* Cian */
+        --animated-shadow-value: 0 0 20px rgba(0, 255, 255, 0.5); 
+    }
+}
+
+
 :root {
     /* Paleta de Colores Futurista/Neón */
     --primary-color: #00FFFF; /* Cian Neón para acentos */
@@ -6,6 +34,10 @@
     --text-color: #E0E0E0; /* Texto Principal Claro */
     --card-bg: #1A1A1A; /* Fondo de tarjeta un poco más claro que el fondo */
     --border-color: #333333; /* Borde sutil oscuro */
+    
+    /* Variables iniciales para la animación (serán sobrescritas por @keyframes) */
+    --animated-color: var(--primary-color);
+    --animated-shadow-value: 0 0 20px rgba(0, 255, 255, 0.2); 
 }
 
 /* ------------------- Base y Reset ------------------- */
@@ -31,7 +63,7 @@ body {
 
 h1, h2, h3 {
     margin-bottom: 1rem;
-    color: var(--text-color); /* Aseguramos que los títulos sean claros */
+    color: var(--text-color); 
 }
 
 a {
@@ -41,20 +73,22 @@ a {
 
 /* ------------------- Hero Section ------------------- */
 .hero {
-    background: #000000; /* Negro puro para el hero */
+    background: #000000; 
     color: #ffffff;
     padding: 100px 0;
     text-align: center;
-    /* Efecto de borde inferior cian sutil */
-    border-bottom: 2px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    
+    /* APLICACIÓN DEL BARRIDO */
+    border-bottom: 2px solid var(--animated-color); /* Usa color animado */
+    box-shadow: var(--animated-shadow-value); /* Usa sombra animada */
+    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación */
 }
 
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 900;
-    color: var(--primary-color); /* Título principal en color neón */
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    color: var(--animated-color); /* Usa color animado */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Deja sombra estática o usa variable */
 }
 
 .hero p {
@@ -66,13 +100,12 @@ a {
 .btn {
     display: inline-block;
     background: var(--primary-color);
-    color: var(--bg-color); /* Texto oscuro en botón brillante */
+    color: var(--bg-color); 
     padding: 12px 30px;
     border-radius: 50px; 
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-weight: bold;
-    /* Sombra de neón en el botón */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
 }
 
@@ -120,7 +153,7 @@ a {
 
 /* ------------------- Projects Carousel ------------------- */
 .projects-carousel {
-    padding: 80px 20px; /* Más padding para el look premium */
+    padding: 80px 20px; 
     position: relative; 
 }
 
@@ -148,12 +181,11 @@ a {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
-    /* Sombra interna sutil de neón */
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex-shrink: 0; 
     width: 350px; 
-    margin-right: 30px; /* Más espacio entre tarjetas */
+    margin-right: 30px; 
     display: flex;
     flex-direction: column;
     color: var(--text-color);
@@ -161,20 +193,22 @@ a {
 
 .project-card:hover {
     transform: translateY(-8px);
-    /* Sombra más marcada en hover */
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 12px 25px rgba(0, 0, 0, 0.5);
+    
+    /* APLICACIÓN DEL BARRIDO EN HOVER */
+    box-shadow: var(--animated-shadow-value), 0 12px 25px rgba(0, 0, 0, 0.5); /* Usa sombra animada */
+    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación en hover */
 }
 
 .project-card img {
-    width: 100%;
-    height: auto; /* <-- ¡MUY IMPORTANTE! La altura se ajustará automáticamente a la proporción de cada imagen. */
-    object-fit: contain; /* <-- Esto asegura que la imagen entera sea visible, sin recortes. */
-    border-bottom: 1px solid var(--border-color);
-    transition: border-color 0.3s;
+    width: 100%;
+    height: auto; 
+    object-fit: contain; 
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s;
 }
 
 .project-card:hover img {
-    border-bottom: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--animated-color); /* Usa color animado */
 }
 
 .card-content {
@@ -203,7 +237,7 @@ a {
     align-items: center;
     padding-top: 15px;
     border-top: 1px solid var(--border-color);
-    color: var(--secondary-color); /* Color neón secundario */
+    color: var(--secondary-color); 
     font-weight: bold;
 }
 
@@ -221,9 +255,12 @@ a {
     position: absolute;
     top: 55%; 
     transform: translateY(-50%);
-    background: rgba(0, 255, 255, 0.1); /* Fondo semitransparente neón */
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background: rgba(0, 255, 255, 0.1); 
+    
+    /* APLICACIÓN DEL BARRIDO */
+    color: var(--animated-color); /* Usa color animado */
+    border: 2px solid var(--animated-color); /* Usa color animado */
+    
     padding: 10px 15px;
     cursor: pointer;
     z-index: 10;
@@ -232,7 +269,10 @@ a {
     transition: all 0.3s;
     width: 50px;
     height: 50px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    
+    box-shadow: var(--animated-shadow-value); /* Usa sombra animada */
+    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación */
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,9 +280,10 @@ a {
 
 .carousel-btn:hover {
     opacity: 1;
-    background: var(--primary-color);
-    color: var(--bg-color); /* Invierte colores en hover */
+    background: var(--animated-color); /* El fondo del hover cambia con el barrido */
+    color: var(--bg-color); 
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 25px var(--animated-color); /* Sombra intensa del color animado */
 }
 
 .prev-btn {
@@ -292,12 +333,13 @@ footer {
     text-align: center;
     padding: 30px 0;
     background: #000000;
-    color: #777; /* <--- Esta es la regla actual */
+    color: var(--text-color); 
     font-size: 0.85rem;
-    border-top: 2px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-    /* Puedes modificar la regla 'color' actual aquí: */
-    color: var(--text-color); /* Usar el color de texto claro (#E0E0E0) */
+    
+    /* APLICACIÓN DEL BARRIDO */
+    border-top: 2px solid var(--animated-color); /* Usa color animado */
+    box-shadow: var(--animated-shadow-value); /* Usa sombra animada */
+    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación */
 }
 
 /* ------------------- Responsividad ------------------- */
@@ -328,7 +370,7 @@ footer {
         margin: 0; 
     }
     .project-card {
-        width: 85vw; /* Más grande en móvil */
+        width: 85vw; 
         margin-left: 7.5vw;
         margin-right: 7.5vw;
     }
