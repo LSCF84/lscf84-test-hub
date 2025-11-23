@@ -1,30 +1,11 @@
 /* ======================================= */
-/* 1. KEYFRAMES: Animación de Barrido Neón */
+/* NUEVOS KEYFRAMES: Movimiento de Fondo   */
 /* ======================================= */
-/* Define la variable que cambiará de color */
-@keyframes neon-sweep {
-    0% { 
-        --animated-color: #00FFFF; /* Cian */
-        --animated-shadow-value: 0 0 20px rgba(0, 255, 255, 0.5); 
-    }
-    25% { 
-        --animated-color: #00FF00; /* Verde */
-        --animated-shadow-value: 0 0 20px rgba(0, 255, 0, 0.5); 
-    }
-    50% { 
-        --animated-color: #FFFF00; /* Amarillo */
-        --animated-shadow-value: 0 0 20px rgba(255, 255, 0, 0.5); 
-    }
-    75% { 
-        --animated-color: #FF00FF; /* Magenta */
-        --animated-shadow-value: 0 0 20px rgba(255, 0, 255, 0.5); 
-    }
-    100% { 
-        --animated-color: #00FFFF; /* Cian */
-        --animated-shadow-value: 0 0 20px rgba(0, 255, 255, 0.5); 
-    }
+@keyframes gradient-sweep {
+    /* Define el movimiento del fondo de izquierda a derecha */
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
-
 
 :root {
     /* Paleta de Colores Futurista/Neón */
@@ -35,9 +16,14 @@
     --card-bg: #1A1A1A; /* Fondo de tarjeta un poco más claro que el fondo */
     --border-color: #333333; /* Borde sutil oscuro */
     
-    /* Variables iniciales para la animación (serán sobrescritas por @keyframes) */
-    --animated-color: var(--primary-color);
-    --animated-shadow-value: 0 0 20px rgba(0, 255, 255, 0.2); 
+    /* Gradiente para el barrido: Mezcla de los colores Neón principales */
+    --sweep-gradient: linear-gradient(
+        to right,
+        var(--secondary-color), /* Magenta */
+        var(--primary-color), /* Cian */
+        #00FF00, /* Verde */
+        var(--secondary-color) /* Magenta (Para un bucle suave) */
+    );
 }
 
 /* ------------------- Base y Reset ------------------- */
@@ -77,18 +63,16 @@ a {
     color: #ffffff;
     padding: 100px 0;
     text-align: center;
-    
-    /* APLICACIÓN DEL BARRIDO */
-    border-bottom: 2px solid var(--animated-color); /* Usa color animado */
-    box-shadow: var(--animated-shadow-value); /* Usa sombra animada */
-    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación */
+    /* Efecto de borde inferior cian sutil */
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 900;
-    color: var(--animated-color); /* Usa color animado */
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Deja sombra estática o usa variable */
+    color: var(--primary-color); 
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
 }
 
 .hero p {
@@ -193,10 +177,7 @@ a {
 
 .project-card:hover {
     transform: translateY(-8px);
-    
-    /* APLICACIÓN DEL BARRIDO EN HOVER */
-    box-shadow: var(--animated-shadow-value), 0 12px 25px rgba(0, 0, 0, 0.5); /* Usa sombra animada */
-    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación en hover */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
 .project-card img {
@@ -208,7 +189,7 @@ a {
 }
 
 .project-card:hover img {
-    border-bottom: 1px solid var(--animated-color); /* Usa color animado */
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .card-content {
@@ -256,11 +237,8 @@ a {
     top: 55%; 
     transform: translateY(-50%);
     background: rgba(0, 255, 255, 0.1); 
-    
-    /* APLICACIÓN DEL BARRIDO */
-    color: var(--animated-color); /* Usa color animado */
-    border: 2px solid var(--animated-color); /* Usa color animado */
-    
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     padding: 10px 15px;
     cursor: pointer;
     z-index: 10;
@@ -269,21 +247,28 @@ a {
     transition: all 0.3s;
     width: 50px;
     height: 50px;
-    
-    box-shadow: var(--animated-shadow-value); /* Usa sombra animada */
-    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación */
-    
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* NUEVO: Barrido de color en el fondo */
+    background: var(--sweep-gradient);
+    background-size: 300% 100%;
+    animation: gradient-sweep 4s infinite linear;
 }
 
 .carousel-btn:hover {
     opacity: 1;
-    background: var(--animated-color); /* El fondo del hover cambia con el barrido */
+    background: var(--primary-color); 
     color: var(--bg-color); 
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 0 25px var(--animated-color); /* Sombra intensa del color animado */
+    box-shadow: 0 0 25px var(--secondary-color);
+    
+    /* Reinicia el fondo en hover para un color sólido */
+    background: var(--primary-color);
+    background-size: 100% 100%;
+    animation: none;
 }
 
 .prev-btn {
@@ -302,6 +287,7 @@ a {
     color: #777;
     box-shadow: none;
     transform: translateY(-50%);
+    animation: none; /* Deshabilita la animación */
 }
 
 /* Estilo para Tarjeta 'Próximamente' */
@@ -335,11 +321,29 @@ footer {
     background: #000000;
     color: var(--text-color); 
     font-size: 0.85rem;
+    position: relative; 
+    overflow: hidden; 
+    /* El border-top y box-shadow se aplican al pseudo-elemento */
+    border-top: none;
+    box-shadow: none;
+}
+
+/* Pseudo-elemento para crear la línea de barrido animado en el footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
     
-    /* APLICACIÓN DEL BARRIDO */
-    border-top: 2px solid var(--animated-color); /* Usa color animado */
-    box-shadow: var(--animated-shadow-value); /* Usa sombra animada */
-    animation: neon-sweep 10s infinite alternate linear; /* Inicia la animación */
+    /* GRADIENTE Y ANIMACIÓN DE BARRIDO */
+    background: var(--sweep-gradient);
+    background-size: 300% 100%; 
+    animation: gradient-sweep 4s infinite linear; 
+    
+    /* EFECTO DE NEÓN (Sombra de barrido) */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
 }
 
 /* ------------------- Responsividad ------------------- */
