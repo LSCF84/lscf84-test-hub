@@ -2,7 +2,7 @@
 /* NUEVOS KEYFRAMES: Movimiento de Fondo   */
 /* ======================================= */
 @keyframes gradient-sweep {
-    /* Define el movimiento del fondo (el gradiente) de izquierda a derecha */
+    /* Define el movimiento del fondo de izquierda a derecha */
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
@@ -100,34 +100,12 @@ a {
     box-shadow: 0 0 25px var(--secondary-color);
 }
 
----
-
 /* ------------------- Section de Tecnologías (Nueva) ------------------- */
 .tech-stack {
     padding: 60px 20px;
     background-color: var(--card-bg);
-    /* Se elimina el borde estático */
+    border-bottom: 1px solid var(--border-color);
     text-align: center;
-    position: relative; /* Esencial para el pseudo-elemento */
-    overflow: hidden;
-}
-
-/* Pseudo-elemento para crear la línea de barrido animado ABAJO */
-.tech-stack::after {
-    content: '';
-    position: absolute;
-    bottom: 0; /* Coloca la línea en la parte inferior */
-    left: 0;
-    width: 100%;
-    height: 1px; /* Grosor de la línea */
-    
-    /* GRADIENTE Y ANIMACIÓN DE BARRIDO */
-    background: var(--sweep-gradient);
-    background-size: 300% 100%; 
-    animation: gradient-sweep 4s infinite linear; 
-    
-    /* Efecto de neón más sutil */
-    box-shadow: 0 0 5px rgba(0, 255, 255, 0.4); 
 }
 
 .tech-stack h2 {
@@ -156,7 +134,6 @@ a {
     text-shadow: 0 0 8px var(--primary-color);
 }
 
----
 
 /* ------------------- Projects Carousel ------------------- */
 .projects-carousel {
@@ -259,6 +236,7 @@ a {
     position: absolute;
     top: 55%; 
     transform: translateY(-50%);
+    background: rgba(0, 255, 255, 0.1); 
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     padding: 10px 15px;
@@ -274,7 +252,7 @@ a {
     align-items: center;
     justify-content: center;
     
-    /* APLICACIÓN DEL BARRIDO EN EL FONDO DEL BOTÓN */
+    /* NUEVO: Barrido de color en el fondo */
     background: var(--sweep-gradient);
     background-size: 300% 100%;
     animation: gradient-sweep 4s infinite linear;
@@ -282,14 +260,15 @@ a {
 
 .carousel-btn:hover {
     opacity: 1;
-    /* Reinicia el fondo en hover para un color sólido, sin animación */
-    background: var(--primary-color);
-    background-size: 100% 100%;
-    animation: none;
-    
+    background: var(--primary-color); 
     color: var(--bg-color); 
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 0 25px var(--secondary-color);
+    
+    /* Reinicia el fondo en hover para un color sólido */
+    background: var(--primary-color);
+    background-size: 100% 100%;
+    animation: none;
 }
 
 .prev-btn {
@@ -326,4 +305,86 @@ a {
     color: #777;
     justify-content: center;
     gap: 10px;
-    border-
+    border-top: 1px dashed #555;
+}
+.coming-soon .card-content h3 {
+    color: #777;
+}
+.coming-soon .card-footer i {
+    color: #777;
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background: #000000;
+    color: var(--text-color); 
+    font-size: 0.85rem;
+    position: relative; 
+    overflow: hidden; 
+    /* El border-top y box-shadow se aplican al pseudo-elemento */
+    border-top: none;
+    box-shadow: none;
+}
+
+/* Pseudo-elemento para crear la línea de barrido animado en el footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    
+    /* GRADIENTE Y ANIMACIÓN DE BARRIDO */
+    background: var(--sweep-gradient);
+    background-size: 300% 100%; 
+    animation: gradient-sweep 4s infinite linear; 
+    
+    /* EFECTO DE NEÓN (Sombra de barrido) */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
+}
+
+/* ------------------- Responsividad ------------------- */
+@media (max-width: 900px) {
+    .carousel-wrapper {
+        margin: 0 20px; 
+    }
+    .project-card {
+        width: 300px;
+        margin-right: 15px;
+    }
+    .prev-btn {
+        left: 0px;
+    }
+    .next-btn {
+        right: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 60px 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .carousel-wrapper {
+        margin: 0; 
+    }
+    .project-card {
+        width: 85vw; 
+        margin-left: 7.5vw;
+        margin-right: 7.5vw;
+    }
+    .projects-carousel {
+        padding: 50px 0;
+    }
+    .carousel-btn {
+        top: 65%; 
+        padding: 8px 10px;
+        width: 40px;
+        height: 40px;
+    }
+}
