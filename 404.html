@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Error de Conexión</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Variables y configuración base */
+        :root {
+            --neon-color-primary: #00ffc8; /* Verde/Cian Neón */
+            --neon-color-secondary: #ff007b; /* Rosa Neón */
+            --bg-dark: #0a0a0a;
+        }
+
+        /* Configuración de Tailwind para usar la fuente Inter y colores personalizados */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-primary': 'var(--neon-color-primary)',
+                        'neon-secondary': 'var(--neon-color-secondary)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-glow': '0 0 10px var(--neon-color-primary), 0 0 20px var(--neon-color-primary), 0 0 40px var(--neon-color-primary)',
+                        'neon-button': '0 0 5px var(--neon-color-primary), 0 0 15px var(--neon-color-primary)',
+                    },
+                    keyframes: {
+                        flicker: {
+                            '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': { opacity: 1 },
+                            '20%, 24%, 55%': { opacity: 0.5 },
+                        },
+                    },
+                    animation: {
+                        flicker: 'flicker 2s infinite alternate',
+                    },
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-[--bg-dark] text-white font-sans min-h-screen flex items-center justify-center p-4 antialiased">
+
+    <!-- Contenedor Principal (Centrado y Responsive) -->
+    <div class="max-w-xl w-full text-center p-8 md:p-12 rounded-2xl border-2 border-[--neon-color-primary] shadow-neon-glow transition-all duration-300 hover:shadow-[0_0_15px_var(--neon-color-primary),_0_0_30px_var(--neon-color-primary)]">
+        
+        <!-- Código de Error Grande y Neón -->
+        <h1 class="text-[8rem] md:text-[12rem] font-extrabold leading-none text-[--neon-color-primary] mb-4 
+                   drop-shadow-[0_0_10px_rgba(0,255,200,0.8)] animate-pulse">
+            404
+        </h1>
+
+        <!-- Mensaje Principal -->
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-neon-secondary tracking-wider uppercase drop-shadow-[0_0_5px_rgba(255,0,123,0.5)]">
+            Acceso Denegado
+        </h2>
+
+        <!-- Descripción -->
+        <p class="text-gray-300 mb-10 text-lg md:text-xl">
+            Parece que has llegado a una zona no cartografiada del ciberespacio. 
+            La ruta solicitada no existe o ha sido desmantelada.
+        </p>
+
+        <!-- Botón de Retorno -->
+        <a href="/" 
+           class="inline-block px-8 py-3 text-lg font-semibold uppercase tracking-wider 
+                  bg-transparent text-[--neon-color-primary] border-2 border-[--neon-color-primary] 
+                  rounded-full transition-all duration-300 
+                  shadow-neon-button hover:bg-[--neon-color-primary] hover:text-gray-900 
+                  focus:outline-none focus:ring-4 focus:ring-[--neon-color-primary]">
+            Volver al Inicio Seguro
+        </a>
+
+        <!-- Pie de página sutil -->
+        <div class="mt-12 text-gray-500 text-sm tracking-widest">
+            <!-- Simulación de efecto de terminal -->
+            <span class="inline-block animate-flicker">|</span> ERROR DE RUTA DEL SISTEMA
+        </div>
+
+    </div>
+
+</body>
+</html>
