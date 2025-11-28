@@ -1,160 +1,281 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolios</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Iconos de Font Awesome para flechas y el reloj de 'Próximamente' -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolios</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de Font Awesome para flechas y el reloj de 'Próximamente' -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Carga del CDN de Tailwind CSS para el estilo del banner/modal (si se usa) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos base del proyecto para mantener consistencia con el banner */
+        :root {
+            --color-primary: #6366f1; /* Indigo */
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            transition: background-color 0.15s;
+        }
+        .btn-primary:hover {
+            background-color: #4f46e5;
+        }
+        /* Asegurar que el modal esté por encima de todo */
+        #cookie-modal {
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <h1>LSCF // CORE DIGITAL</h1>
-            <p>Acceso directo a mi ecosistema de código y soluciones. Descubre las implementaciones que definen mi stack tecnológico.</p>
-            <a href="#proyectos" class="btn">Explorar Proyectos</a>
-        </div>
-    </header>
-    
-    <!-- Sección: Stack Tecnológico Destacado -->
-    <section class="tech-stack">
-        <div class="container">
-            <h2>Tecnologías Clave</h2>
-            <div class="tech-grid">
-                <!-- Iconos de ejemplo - Puedes reemplazarlos con otros de Font Awesome -->
-                <i class="fab fa-react tech-icon" title="React / Frontend"></i>
-                <i class="fab fa-node-js tech-icon" title="Node.js / Backend"></i>
-                <i class="fab fa-python tech-icon" title="Programación y Automatización (Python)"></i>
-                <i class="fas fa-server tech-icon" title="Servidores y APIs"></i>
-                <i class="fab fa-js-square tech-icon" title="JavaScript Moderno"></i>
-                <i class="fab fa-git-alt tech-icon" title="Control de Versiones"></i>
-                <i class="fas fa-cloud tech-icon" title="Infraestructura Cloud (Azure/AWS)"></i>
-                <i class="fas fa-network-wired tech-icon" title="Networking y Seguridad (Cisco/Fortigate)"></i>
-                <i class="fas fa-clipboard-check tech-icon" title="Gestión Empresarial (SAP/JIRA/ERP)"></i>
+    <header class="hero">
+        <div class="container">
+            <h1>LSCF // CORE DIGITAL</h1>
+            <p>Acceso directo a mi ecosistema de código y soluciones. Descubre las implementaciones que definen mi stack tecnológico.</p>
+            <a href="#proyectos" class="btn">Explorar Proyectos</a>
+        </div>
+    </header>
+    
+    <!-- Sección: Stack Tecnológico Destacado -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2>Tecnologías Clave</h2>
+            <div class="tech-grid">
+                <!-- Iconos de ejemplo - Puedes reemplazarlos con otros de Font Awesome -->
+                <i class="fab fa-react tech-icon" title="React / Frontend"></i>
+                <i class="fab fa-node-js tech-icon" title="Node.js / Backend"></i>
+                <i class="fab fa-python tech-icon" title="Programación y Automatización (Python)"></i>
+                <i class="fas fa-server tech-icon" title="Servidores y APIs"></i>
+                <i class="fab fa-js-square tech-icon" title="JavaScript Moderno"></i>
+                <i class="fab fa-git-alt tech-icon" title="Control de Versiones"></i>
+                <i class="fas fa-cloud tech-icon" title="Infraestructura Cloud (Azure/AWS)"></i>
+                <i class="fas fa-network-wired tech-icon" title="Networking y Seguridad (Cisco/Fortigate)"></i>
+                <i class="fas fa-clipboard-check tech-icon" title="Gestión Empresarial (SAP/JIRA/ERP)"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="projects-carousel container">
+        <h2>Portfolios y Proyectos Destacados</h2>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                
+                <!-- Tarjeta 1: Proyecto Jrdev -->
+                <!-- ¡IMPORTANTE! Reemplaza esta URL con la dirección web de tu proyecto Jrdev -->
+                <a href="https://jrdev-lscf.vercel.app/" class="project-card" target="_blank">
+                    <img src="assets/img/jrdev.png" alt="Vista previa del proyecto Jrdev">
+                    <div class="card-content">
+                        <h3>Portfolio Moderno</h3>
+                        <p>Plataforma desarrollada con las últimas tendencias, enfocada en optimización y rendimiento.</p>
+                        <div class="card-footer">
+                            <span>Acceder al Portfolio</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                 <!-- Tarjeta 2: Portfolio Web Anterior -->
+                <!-- ¡IMPORTANTE! Reemplaza esta URL con la dirección web de tu portfolio anterior -->
+                <a href="https://portfolio-websteel.vercel.app/" class="project-card" target="_blank">
+                    <img src="assets/img/porfolio-web.png" alt="Vista previa del portfolio web anterior">
+                    <div class="card-content">
+                        <h3>Portfolio Clásico</h3>
+                        <p>Mi primera presentación personal, utilizando una pila de desarrollo web tradicional (HTML/CSS).</p>
+                        <div class="card-footer">
+                            <span>Acceder al Portfolio</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                  <!-- Tarjeta 3: Portfolio Web Anterior -->
+                <!-- ¡IMPORTANTE! Reemplaza esta URL con la dirección web de tu portfolio anterior -->
+                <a href="https://portfolio-main-lscf.vercel.app/" class="project-card" target="_blank">
+                    <img src="assets/img/portfolio-main-lscf.vercel.app.png" alt="Vista previa del portfolio web anterior">
+                    <div class="card-content">
+                        <h3>Portfolio Main</h3>
+                        <p>Mi plataforma profesional más reciente. Muestra la combinación de 15 años de experiencia IT con mi enfoque actual en desarrollo web y programación moderna.</p>
+                        <div class="card-footer">
+                            <span>Acceder al Portfolio</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Tarjeta 4: Proyecto CSM (CORREGIDO: Ahora es un enlace funcional y sin 'coming-soon') -->
+                <a href="https://github.com/LSCF84/Check-Software-Minimum-CSM" class="project-card" target="_blank">
+                    <img src="assets/img/CSM.png" alt="Vista previa de la utilidad CSM">
+                    <div class="card-content">
+                        <h3>CSM</h3>
+                        <p>Utilidad Python con interfaz gráfica (GUI) para optimizar y auditar instalaciones semi-automáticas.</p>
+                        <div class="card-footer">
+                            <span>Ver Repositorio</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a> <!-- CIERRE CORRECTO DE LA ETIQUETA <a> -->
+                <!-- Tarjeta 5: Proyecto PDF-RS (CORREGIDO: Ahora es un enlace funcional y sin 'coming-soon') -->
+                <a href="https://github.com/LSCF84/PDF-Renamer-Security-PDF-RS" class="project-card" target="_blank">
+                    <img src="assets/img/RS.png" alt="Vista previa de la utilidad CSM">
+                    <div class="card-content">
+                        <h3>Renamer PDF Security</h3>
+                        <p>Renombrar y proteger PDFs con la opcion de dar seguridad a los archivos</p>
+                        <div class="card-footer">
+                            <span>Ver Repositorio</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a> <!-- CIERRE CORRECTO DE LA ETIQUETA <a> -->
+                <!-- Tarjeta 6: Proyecto RSS (CORREGIDO: Ahora es un enlace funcional y sin 'coming-soon') -->
+                <a href="https://github.com/LSCF84/PDF-Renamer-Security-Suite-PDF-RSS" class="project-card" target="_blank">
+                    <img src="assets/img/RS.png" alt="Vista previa de la utilidad CSM">
+                    <div class="card-content">
+                        <h3>Renamer PDF Security Suite</h3>
+                        <p>La herramienta definitiva para la gestión de documentos PDF por lotes. Genera plantillas de datos (Excel), renombra automáticamente archivos y protege PDFs con contraseñas individuales.</p>
+                        <div class="card-footer">
+                            <span>Ver Repositorio</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a> <!-- CIERRE CORRECTO DE LA ETIQUETA <a> -->
+
+
+                <!-- Tarjeta 7: Ejemplo Próximo Proyecto (Mantiene la clase 'coming-soon') -->
+                <div class="project-card coming-soon">
+                    <img src="assets/img/LOGO.png" alt="Vista previa de la utilidad CSM">
+                    <div class="card-content">
+                        <h3>[Proyecto Y] Futuro Proyecto</h3>
+                        <p>Futuro Proyecto</p>
+                        <div class="card-footer">
+                            <span>Desarrollo Activo</span>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            </div>
+        </div>
+        
+        <!-- Botones de Navegación del Carrusel -->
+        <button class="carousel-btn prev-btn" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next-btn" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LSCF. Todos los derechos reservados. | 
+            Desarrollado y mantenido con tecnologías modernas.
+            <!-- Enlace a la política de cookies -->
+            <a href="cookie_policy.html" class="text-indigo-400 hover:underline">Política de Cookies</a>
+        </p>
+    </footer>
+
+    <!-- ================================== -->
+    <!-- BANNER DE CONSENTIMIENTO DE COOKIES -->
+    <!-- Se mantiene la estructura HTML aquí, la visibilidad se controla en JS -->
+    <!-- ================================== -->
+    <div id="cookie-banner" class="fixed inset-x-0 bottom-0 bg-gray-900 bg-opacity-95 text-white p-4 sm:p-5 shadow-2xl hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 md:space-x-6">
+            
+            <!-- Texto del aviso -->
+            <p class="text-sm text-gray-300 flex-1 text-center md:text-left">
+                Utilizamos cookies propias y de terceros para análisis y optimización. Al hacer clic en &quot;Aceptar Todo&quot;, consientes su uso. Consulta nuestra <a href="cookie_policy.html" class="text-indigo-400 hover:underline">Política de Cookies</a>.
+            </p>
+
+            <!-- Botones -->
+            <div class="flex space-x-3 w-full md:w-auto justify-center">
+                <button
+                    id="accept-all-btn"
+                    class="px-4 py-2 text-sm font-semibold rounded-lg btn-primary hover:bg-indigo-700 transition duration-150 shadow-md whitespace-nowrap"
+                >
+                    Aceptar Todo
+                </button>
+                <button
+                    id="configure-btn"
+                    class="px-4 py-2 text-sm font-semibold rounded-lg bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 transition duration-150 shadow-md whitespace-nowrap"
+                >
+                    Configurar
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="proyectos" class="projects-carousel container">
-        <h2>Portfolios y Proyectos Destacados</h2>
-        
-        <div class="carousel-wrapper">
-            <div class="carousel-track">
-                
-                <!-- Tarjeta 1: Proyecto Jrdev -->
-                <!-- ¡IMPORTANTE! Reemplaza esta URL con la dirección web de tu proyecto Jrdev -->
-                <a href="https://jrdev-lscf.vercel.app/" class="project-card" target="_blank">
-                    <img src="assets/img/jrdev.png" alt="Vista previa del proyecto Jrdev">
-                    <div class="card-content">
-                        <h3>Portfolio Moderno</h3>
-                        <p>Plataforma desarrollada con las últimas tendencias, enfocada en optimización y rendimiento.</p>
-                        <div class="card-footer">
-                            <span>Acceder al Portfolio</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
+    <!-- ====================================== -->
+    <!-- MODAL DE CONFIGURACIÓN (Oculto) -->
+    <!-- ====================================== -->
+    <div id="cookie-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 hidden">
+        <div class="bg-gray-800 text-white rounded-xl shadow-2xl max-w-lg w-full p-6 space-y-6">
+            <h2 class="text-2xl font-bold text-white border-b border-gray-700 pb-3">
+                Configuración de Cookies
+            </h2>
 
-                 <!-- Tarjeta 2: Portfolio Web Anterior -->
-                <!-- ¡IMPORTANTE! Reemplaza esta URL con la dirección web de tu portfolio anterior -->
-                <a href="https://portfolio-websteel.vercel.app/" class="project-card" target="_blank">
-                    <img src="assets/img/porfolio-web.png" alt="Vista previa del portfolio web anterior">
-                    <div class="card-content">
-                        <h3>Portfolio Clásico</h3>
-                        <p>Mi primera presentación personal, utilizando una pila de desarrollo web tradicional (HTML/CSS).</p>
-                        <div class="card-footer">
-                            <span>Acceder al Portfolio</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                  <!-- Tarjeta 3: Portfolio Web Anterior -->
-                <!-- ¡IMPORTANTE! Reemplaza esta URL con la dirección web de tu portfolio anterior -->
-                <a href="https://portfolio-main-lscf.vercel.app/" class="project-card" target="_blank">
-                    <img src="assets/img/portfolio-main-lscf.vercel.app.png" alt="Vista previa del portfolio web anterior">
-                    <div class="card-content">
-                        <h3>Portfolio Main</h3>
-                        <p>Mi plataforma profesional más reciente. Muestra la combinación de 15 años de experiencia IT con mi enfoque actual en desarrollo web y programación moderna.</p>
-                        <div class="card-footer">
-                            <span>Acceder al Portfolio</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Tarjeta 4: Proyecto CSM (CORREGIDO: Ahora es un enlace funcional y sin 'coming-soon') -->
-                <a href="https://github.com/LSCF84/Check-Software-Minimum-CSM" class="project-card" target="_blank">
-                    <img src="assets/img/CSM.png" alt="Vista previa de la utilidad CSM">
-                    <div class="card-content">
-                        <h3>CSM</h3>
-                        <p>Utilidad Python con interfaz gráfica (GUI) para optimizar y auditar instalaciones semi-automáticas.</p>
-                        <div class="card-footer">
-                            <span>Ver Repositorio</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a> <!-- CIERRE CORRECTO DE LA ETIQUETA <a> -->
-                <!-- Tarjeta 5: Proyecto PDF-RS (CORREGIDO: Ahora es un enlace funcional y sin 'coming-soon') -->
-                <a href="https://github.com/LSCF84/PDF-Renamer-Security-PDF-RS" class="project-card" target="_blank">
-                    <img src="assets/img/RS.png" alt="Vista previa de la utilidad CSM">
-                    <div class="card-content">
-                        <h3>Renamer PDF Security</h3>
-                        <p>Renombrar y proteger PDFs con la opcion de dar seguridad a los archivos</p>
-                        <div class="card-footer">
-                            <span>Ver Repositorio</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a> <!-- CIERRE CORRECTO DE LA ETIQUETA <a> -->
-                <!-- Tarjeta 6: Proyecto RSS (CORREGIDO: Ahora es un enlace funcional y sin 'coming-soon') -->
-                <a href="https://github.com/LSCF84/PDF-Renamer-Security-Suite-PDF-RSS" class="project-card" target="_blank">
-                    <img src="assets/img/RS.png" alt="Vista previa de la utilidad CSM">
-                    <div class="card-content">
-                        <h3>Renamer PDF Security Suite</h3>
-                        <p>La herramienta definitiva para la gestión de documentos PDF por lotes. Genera plantillas de datos (Excel), renombra automáticamente archivos y protege PDFs con contraseñas individuales.</p>
-                        <div class="card-footer">
-                            <span>Ver Repositorio</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </a> <!-- CIERRE CORRECTO DE LA ETIQUETA <a> -->
+            <p class="text-sm text-gray-300">
+                Puede ajustar sus preferencias de cookies a continuación. Las cookies necesarias son obligatorias para el funcionamiento del sitio.
+            </p>
 
-
-                <!-- Tarjeta 7: Ejemplo Próximo Proyecto (Mantiene la clase 'coming-soon') -->
-                <div class="project-card coming-soon">
-                    <img src="assets/img/LOGO.png" alt="Vista previa de la utilidad CSM">
-                    <div class="card-content">
-                        <h3>[Proyecto Y] Futuro Proyecto</h3>
-                        <p>Futuro Proyecto</p>
-                        <div class="card-footer">
-                            <span>Desarrollo Activo</span>
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </div>
+            <!-- Opción 1: Cookies Necesarias -->
+            <div class="flex justify-between items-center py-2 border-b border-gray-700">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">1. Cookies Estrictamente Necesarias</h3>
+                    <p class="text-xs text-gray-400">
+                        Necesarias para la seguridad, el almacenamiento de preferencias (incluyendo el consentimiento de cookies) y la funcionalidad esencial.
+                    </p>
                 </div>
-                
+                <input
+                    type="checkbox"
+                    checked
+                    disabled
+                    class="h-5 w-5 rounded text-indigo-600 bg-gray-700 border-gray-600 cursor-not-allowed"
+                />
+            </div>
+
+            <!-- Opción 2: Cookies de Rendimiento -->
+            <div class="flex justify-between items-center py-2">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">2. Cookies de Rendimiento (Análisis)</h3>
+                    <p class="text-xs text-gray-400">
+                        Nos ayudan a medir el tráfico y a optimizar la experiencia del usuario (ej. Google Analytics).
+                    </p>
+                </div>
+                <input
+                    type="checkbox"
+                    id="performance-checkbox"
+                    class="h-5 w-5 rounded text-indigo-600 bg-gray-700 border-gray-600 focus:ring-indigo-500"
+                />
+            </div>
+
+            <!-- Botones de acción del modal -->
+            <div class="flex justify-end space-x-3 pt-4">
+                <button
+                    id="cancel-modal-btn"
+                    class="px-4 py-2 text-sm font-semibold rounded-lg bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 transition duration-150"
+                >
+                    Cancelar
+                </button>
+                <button
+                    id="save-preferences-btn"
+                    class="px-4 py-2 text-sm font-semibold rounded-lg btn-primary hover:bg-indigo-700 transition duration-150"
+                >
+                    Guardar Preferencias
+                </button>
             </div>
         </div>
-        
-        <!-- Botones de Navegación del Carrusel -->
-        <button class="carousel-btn prev-btn" aria-label="Anterior">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="carousel-btn next-btn" aria-label="Siguiente">
-            <i class="fas fa-chevron-right"></i>
-        </button>
+    </div>
 
-    </section>
 
-    <footer>
-        <p>&copy; 2025 LSCF. Todos los derechos reservados. | Desarrollado y mantenido con tecnologías modernas.</p>
-    </footer>
-
-    <!-- Enlace al archivo JavaScript para la funcionalidad del carrusel -->
-    <script src="script.js"></script>
+    <!-- Enlace al archivo JavaScript para la funcionalidad del carrusel -->
+    <script src="script.js"></script>
+    <!-- NUEVO: Enlace al archivo JavaScript para la gestión de cookies -->
+    <script src="cookie-consent.js"></script>
 
 </body>
 </html>
