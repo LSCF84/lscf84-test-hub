@@ -1,8 +1,8 @@
-# 🚀 LSCF Core Digital - Plataforma Principal
+# 🚀 Portfolio Core Digital
 
 > "Desarrollo de software y soluciones web innovadoras. Calidad desde el núcleo."
 
-Este repositorio contiene el código fuente para la plataforma principal **LSCF Core Digital**, que sirve como un centro para mis servicios, proyectos clave y filosofía de desarrollo. Es una demostración de mis habilidades para construir aplicaciones web robustas y escalables.
+Este repositorio contiene el código fuente para la plataforma principal **Core Digital**, que sirve como un centro para mis servicios, proyectos clave y filosofía de desarrollo. Es una demostración de mis habilidades para construir aplicaciones web robustas y escalables.
 
 ![Captura de pantalla de la aplicación de Portfolio](https://lscf-coredigital.vercel.app/assets/img/lscf-central.vercel.app.png)
 
