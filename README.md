@@ -1,109 +1,105 @@
-🌐 LSCF-Central | Portal de Enlaces y Portafolios
+# 🚀 LSCF Core Digital - Plataforma Principal
 
-🚀 Visión General del Proyecto
+> "Desarrollo de software y soluciones web innovadoras. Calidad desde el núcleo."
 
-LSCF-Central es la página de inicio centralizada para acceder a mis diversos proyectos, portafolios especializados y perfiles profesionales.
+Este repositorio contiene el código fuente para la plataforma principal **LSCF Core Digital**, que sirve como un centro para mis servicios, proyectos clave y filosofía de desarrollo. Es una demostración de mis habilidades para construir aplicaciones web robustas y escalables.
 
-Diseñado para ser un punto de contacto único, este portal permite a reclutadores, colaboradores y otros interesados navegar fácilmente a través de mis diferentes áreas de experiencia y enlaces clave.
+![Captura de pantalla de la aplicación de Portfolio](https://lscf-coredigital.vercel.app/assets/img/lscf-central.vercel.app.png)
 
-✨ Características Principales
+---
 
-Punto de Contacto Único: Un solo enlace que dirige a todas mis plataformas profesionales.
+## 🌟 Acerca de LSCF Core Digital
 
-Acceso Directo a Portafolios: Enlaces claros a mis portafolios especializados (ej. Frontend, UX/UI, Proyectos Avanzados).
+Este proyecto está diseñado no solo para mostrar mi trabajo, sino para actuar como un punto central donde clientes o colaboradores potenciales pueden conocer mi enfoque profesional.
 
-Diseño Limpio: Interfaz minimalista y moderna que prioriza la velocidad y la usabilidad.
+### 🎯 Características Principales
 
-Totalmente Responsive: Adaptado para una visualización perfecta en dispositivos móviles, tabletas y escritorio.
+* **Plataforma Centralizada:** Concentra información sobre servicios de consultoría, desarrollo y contacto.
+* **Componentización Eficiente:** Código modular y reutilizable gracias al uso de React/Next.js.
+* **Optimización de Rendimiento:** Carga rápida y excelente puntuación Lighthouse.
+* **UX/UI Profesional:** Interfaz limpia e intuitiva, pensada para la usabilidad.
+* **Diseño Responsivo:** Adaptabilidad total a cualquier tamaño de pantalla.
 
-🛠️ Tecnologías Utilizadas
+---
 
-Este proyecto está construido con herramientas modernas para garantizar un rendimiento óptimo:
+## 🛠️ Tecnologías Utilizadas
 
-Tecnología
+Este proyecto, como mi trabajo anterior, utiliza tecnologías modernas orientadas al rendimiento y la escalabilidad.
 
-Descripción
+* **Next.js / React** (Framework de desarrollo frontend y backend ligero)
+* **TypeScript** (Garantizando la robustez y menos errores en producción)
+* **HTML5 & CSS3** (Estructura y Estilo base)
+* **Tailwind CSS** (Framework de estilos CSS utilitario para un desarrollo rápido)
+* **Componentes Personalizados** (Librerías de UI a medida o estándar, si aplica)
 
-HTML5
+**Despliegue y Hosting:**
 
-Estructura base del contenido.
+* **Vercel** (Para CI/CD y rendimiento sin servidor)
 
-CSS3
+**Otras Herramientas:**
 
-Estilización y presentación.
+* Git / GitHub
+* ESLint / Prettier (Para mantener la calidad y el formato del código)
 
-Tailwind CSS
+---
 
-Framework CSS utility-first para un desarrollo rápido y flexible.
+## 🚀 Puesta en Marcha (Instalación Local)
 
-Vercel
+Sigue estos pasos para clonar y ejecutar la plataforma Core Digital en tu entorno de desarrollo.
 
-Plataforma de despliegue continuo (hosting).
+### Requisitos Previos
 
-🔗 Enlaces Importantes
+* Node.js (versión 16.x o superior)
+* npm o yarn
+* Git
 
-Puedes encontrarme y ver mi trabajo en las siguientes plataformas (los nombres de los portafolios son solo ejemplos basados en la estructura anterior):
+### Pasos
 
-Plataforma
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [URL_DEL_REPOSITORIO_DE_CORE_DIGITAL] 
+    # Asegúrate de reemplazar la URL con la de tu repositorio real
+    ```
 
-Enlace
+2.  **Acceder al directorio:**
+    ```bash
+    cd [nombre-del-repositorio] 
+    ```
 
-Descripción
+3.  **Instalar dependencias:**
+    ```bash
+    npm install 
+    # o
+    yarn install
+    ```
 
-Portafolio Principal
+4.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    # o
+    yarn dev
+    ```
 
-[Tu Enlace Principal aquí]
+La plataforma estará disponible en `http://localhost:3000` (o el puerto por defecto de Next.js).
 
-Mi colección de trabajo más destacada.
+---
 
-Portafolio Especializado (WebSteel)
+## 🔗 Enlaces
 
-[Tu Enlace a WebSteel aquí]
+* **Plataforma en Vivo (Vercel):** [https://lscf-coredigital.vercel.app/](https://lscf-coredigital.vercel.app/)
+* **Mi Perfil de GitHub:** [https://github.com/LSCF84](https://github.com/LSCF84)
 
-Enfocado en proyectos de X tema.
+---
 
-GitHub
+## 📬 Contacto
 
-https://github.com/LSCF84
+Si tienes alguna pregunta, oportunidad de colaboración o simplemente quieres saludar, no dudes en contactarme:
 
-Repositorio de código fuente y proyectos.
+* **GitHub:** [@LSCF84](https://github.com/LSCF84)
+* **Correo Electrónico:** l.sergio.camacho.fernandez@gmail.com
 
-Correo Electrónico
+---
 
-mailto:l.sergio.camacho.fernandez@gmail.com
+## 📝 Licencia
 
-El mejor método para contactarme directamente.
-
-⚙️ Instalación y Uso (Desarrollo Local)
-
-Si deseas clonar y ejecutar este proyecto localmente para adaptarlo o revisarlo:
-
-Clonar el repositorio:
-
-git clone [https://github.com/LSCF84/lscf-central.vercel.app.git](https://github.com/LSCF84/lscf-central.vercel.app.git)
-cd lscf-central.vercel.app
-
-
-Abrir el proyecto:
-Dado que es un proyecto simple de HTML/CSS/Tailwind (sin compilación compleja), simplemente abre el archivo principal (index.html o similar) en tu navegador preferido.
-(Si usas una configuración de Tailwind avanzada con PostCSS, necesitarás el entorno Node.js para compilar los estilos.)
-
-🤝 Contribuciones
-
-Este proyecto es primariamente una página personal, pero si encuentras algún error o tienes sugerencias de diseño o accesibilidad, ¡las contribuciones son bienvenidas!
-
-Haz un Fork del repositorio.
-
-Crea una nueva rama (git checkout -b feature/mejora-x).
-
-Realiza tus cambios y haz commit (git commit -am 'feat: Añade X funcionalidad').
-
-Sube la rama (git push origin feature/mejora-x).
-
-Abre un Pull Request.
-
-📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE.md (si existe) para más detalles.
-
-Desarrollado y mantenido por LSCF84
+Este proyecto está bajo la licencia **MIT**.
